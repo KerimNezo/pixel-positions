@@ -12,7 +12,7 @@
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; ">
                 <div>
-                    <a href="#" style="background-color: #c5baba; padding: 5px 10px 5px 10px; border-radius: 15px; font-size: 12px; text-decoration: none;">Tag</a>
+                    <a href="#" class="mali-tagovi" style="background-color: #c5baba; padding: 5px 10px 5px 10px; border-radius: 15px; font-size: 12px; text-decoration: none; ">Tag</a>
                     <a href="#">Tag</a>
                     <a href="#">Tag</a>
                 </div>
