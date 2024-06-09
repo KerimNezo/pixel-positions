@@ -28,7 +28,7 @@
             </div>
         </nav>
 
-        <main style="margin-top: 25px; max-width:986px; ">
+        <main style="margin-top: 25px; max-width:986px; margin: auto;">
             {{ $slot }}
         </main>
     </div>
