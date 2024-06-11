@@ -30,6 +30,12 @@
 
         <section>
             <x-section-heading>Recent Jobs</x-section-heading>
+
+            <div  style="display: flex; flex-direction: column; position: sticky; margin-top: 15px; gap: 15px;">
+                <x-job-card-wide />
+                <x-job-card-wide />
+                <x-job-card-wide />
+            </div>
            
         </section>
     </div>

@@ -1,4 +1,4 @@
-<div style="padding: 15px; background-color:coral; border-radius: 15px; display: flex; flex-direction:column; text-align: center; margin-right: 50  px;">
+<div style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; flex-direction:column; text-align: center; margin-right: 50  px;">
     <div style="text-align: start; font-size: 14px;">Laracasts</div>
 
     <div style="padding-bottom: 20px; padding-top: 20px; font-weight: bold;">
@@ -13,6 +13,6 @@
             <x-tag>Tag</x-tag>
         </div>
 
-        <img src="https://placehold.it/42/42" alt="" style="border-radius: 15px; ">
+        <x-employer-logo width="42" />
     </div>
 </div>

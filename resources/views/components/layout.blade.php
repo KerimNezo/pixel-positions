@@ -4,9 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixel Positions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?famildy=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body style="background-color: #060606; margin: 0px; color: white;  ">
+<body style="background-color: #060606; margin: 0px; color: white; font-family:'Hanken Grotesk', sans-serif">
 
     <div style="padding-left: 25px; padding-right: 25px;">
         <nav style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #888888;">
