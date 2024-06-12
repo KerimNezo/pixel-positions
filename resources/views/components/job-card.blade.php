@@ -1,4 +1,4 @@
-<div style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; flex-direction:column; text-align: center; margin-right: 50  px;">
+<div class="job-card" style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; flex-direction:column; text-align: center;">
     <div style="text-align: start; font-size: 14px;">Laracasts</div>
 
     <div style="padding-bottom: 20px; padding-top: 20px; font-weight: bold;">

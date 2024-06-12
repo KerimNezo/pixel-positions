@@ -1,4 +1,4 @@
-<div style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; text-align: center; gap: 15px;">
+<div class="job-card" style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; text-align: center; gap: 15px;">
     <div>
         <x-employer-logo />
     </div>  
