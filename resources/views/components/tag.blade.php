@@ -1,1 +1,15 @@
-<a href="#" style="color: white; padding: 5px 10px 5px 10px; border-radius: 15px; font-size: 10px; text-decoration: none; font-weight: bold; ">{{ $slot }}</a>
+@props(['size' => 'base'])
+
+@php
+    $class = '';
+
+    if ($size == 'base') {
+        $class = 'veliki-tag';
+    }
+
+    if ($size == 'small') {
+        $class = 'mali-tag';
+    }
+@endphp
+
+    <a href="#" class="{{ $class }}" >{{ $slot }}</a>

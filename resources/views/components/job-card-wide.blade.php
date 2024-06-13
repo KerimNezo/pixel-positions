@@ -12,9 +12,9 @@
     </div>
 
     <div class="tagovi" style="display: flex; gap: 5px; margin-top: auto;">
-        <x-tag>Tag</x-tag>
-        <x-tag>Tag</x-tag>
-        <x-tag>Tag</x-tag>
+        <x-tag size="small">DB</x-tag>
+        <x-tag size="small">Backend</x-tag>
+        <x-tag size="small">Frontend</x-tag>
     </div>
 
 </div>
