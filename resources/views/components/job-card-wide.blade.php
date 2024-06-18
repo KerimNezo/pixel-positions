@@ -6,15 +6,15 @@
     </div>  
     
     <div style="flex: 1; text-align: left; display: flex; flex-direction: column; ">
-        <a style="font-size: 12px; color:darkgray;">Laracasts</a>
+        <a style="font-size: 12px; color:darkgray;">{{ $job->employer->name }}</a>
 
-        <h3 style="font-size: 20px; margin: 0px; margin-top: 10px;"> Video editor </h3>
-        <p style="margin: 0px; margin-top: auto;"> Full time - From $60,000 </p>
+        <h3 style="font-size: 20px; margin: 0px; margin-top: 10px;"> {{ $job->title}} </h3>
+        <p style="margin: 0px; margin-top: auto;"> {{ $job->schedule }} - From {{ $job->salary }} </p>
     </div>
 
     <div class="tagovi" style="display: flex; gap: 5px; margin-top: auto;">
         @foreach ($job->tags as $tag)
-            <x-tag :$tag size="small">Backend</x-tag>
+            <x-tag :$tag size="small" />
         @endforeach
     </div>
 

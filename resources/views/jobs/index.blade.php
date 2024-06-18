@@ -23,7 +23,7 @@
         <section style="padding-top: 40px;">
             <x-section-heading>Tags</x-section-heading>
 
-            <div class="tagovi" style="display: flex; justify-content:space-between; position: sticky; margin-top: 15px;">
+            <div class="tagovi" style="display: flex; justify-content:flex-start; margin-top: 15px;">
                 @foreach ($tags as $tag)
                     <x-tag :$tag /> {{-- :tag="$tag" je isto kao i :$tag --}}
                 @endforeach                

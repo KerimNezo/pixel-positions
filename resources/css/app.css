@@ -24,6 +24,8 @@ div.job-card:hover h3 {
 a.mali-tag {
     color: white; 
     padding: 5px 10px 5px 10px; 
+    margin-left: 4px;
+    margin-right: 4px;
     border-radius: 15px; 
     font-size: 10px; 
     text-decoration: none; 
