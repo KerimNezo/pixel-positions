@@ -11,7 +11,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; ">
         <div class="tagovi">
             @foreach ($job->tags as $tag)
-                <x-tag :tag size="small">Backend</x-tag>
+                <x-tag :$tag size="small">Backend</x-tag>
             @endforeach
         </div>
 
