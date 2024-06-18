@@ -12,7 +12,7 @@
             <x-section-heading>Featured Jobs</x-section-heading>
 
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 24px;">
-                @foreach ($jobs as $job)
+                @foreach ($featured_jobs as $job)
                     <x-job-card :$job />
                 @endforeach
                 {{-- ovo cemo morati malo popraviti jer je ovo featured jobs dio --}}
