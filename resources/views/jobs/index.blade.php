@@ -12,9 +12,10 @@
             <x-section-heading>Featured Jobs</x-section-heading>
 
             <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 24px;">
-                <x-job-card />
-                <x-job-card />
-                <x-job-card />
+                @foreach ($jobs as $job)
+                    <x-job-card :$job />
+                @endforeach
+                {{-- ovo cemo morati malo popraviti jer je ovo featured jobs dio --}}
             </div>
             
         </section>
@@ -23,15 +24,9 @@
             <x-section-heading>Tags</x-section-heading>
 
             <div class="tagovi" style="display: flex; justify-content:space-between; position: sticky; margin-top: 15px;">
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
-                <x-tag>Tag</x-tag>
+                @foreach ($tags as $tag)
+                    <x-tag :$tag /> {{-- :tag="$tag" je isto kao i :$tag --}}
+                @endforeach                
             </div>
 
         </section>
@@ -40,9 +35,9 @@
             <x-section-heading>Recent Jobs</x-section-heading>
 
             <div  style="display: flex; flex-direction: column; position: sticky; margin-top: 15px; gap: 15px;">
-                <x-job-card-wide />
-                <x-job-card-wide />
-                <x-job-card-wide />
+                @foreach ($jobs as $job)
+                    <x-job-card-wide :job="$job"/>  {{-- Mozemo isto ovdje staviti :$job --}}
+                @endforeach 
             </div>
            
         </section>
