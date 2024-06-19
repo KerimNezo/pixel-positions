@@ -1,0 +1,1 @@
+<button {{ $attributes(['class' => 'dugme-komponenta']) }}>{{ $slot }}</button>

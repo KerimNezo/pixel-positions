@@ -40,3 +40,78 @@ a.veliki-tag {
     text-decoration: none; 
     font-weight: bold;
 }
+
+button.dugme-komponenta {
+    background-color: #1e40af;
+    border-radius: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-weight: 700;
+}
+ 
+div.checkbox-komponenta {
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+div.divider-komponenta {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    height: 1px;
+    width: 100%;
+}
+
+p.error-komponenta {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #ef4444;
+    margin-top: 0.25rem;
+}
+
+div.field-komponenta {
+    margin-top: 0.25rem;
+}
+
+form.form-komponenta {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.form-komponenta > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem;
+}
+
+input.input-komponenta {
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+select.select-komponenta {
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
