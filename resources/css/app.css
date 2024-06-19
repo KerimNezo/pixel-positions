@@ -20,37 +20,38 @@ div.job-card:hover h3 {
     color: rgb(30, 64, 175);
     transition-duration: 0.3s;
 }
- 
+
 a.mali-tag {
-    color: white; 
-    padding: 5px 10px 5px 10px; 
+    color: white;
+    padding: 5px 10px 5px 10px;
     margin-left: 4px;
     margin-right: 4px;
-    border-radius: 15px; 
-    font-size: 10px; 
-    text-decoration: none; 
+    border-radius: 15px;
+    font-size: 10px;
+    text-decoration: none;
     font-weight: bold;
 }
 
 a.veliki-tag {
-    color: white; 
-    padding: 10px 15px 10px 15px; 
-    border-radius: 15px; 
-    font-size: 14px; 
-    text-decoration: none; 
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    text-decoration: none;
     font-weight: bold;
 }
 
 button.dugme-komponenta {
     background-color: #1e40af;
     border-radius: 0.25rem;
+    border-width: 0rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-weight: 700;
 }
- 
+
 div.checkbox-komponenta {
     border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.1);
