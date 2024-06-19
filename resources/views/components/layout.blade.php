@@ -6,7 +6,7 @@
     <title>Pixel Positions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
+    <link
         href="https://fonts.googleapis.com/css2?famildy=Hanken+Grotesk:wght@400;500;600&display=swap"
         rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -16,7 +16,7 @@
     <div style="padding-left: 25px; padding-right: 25px;">
         <nav style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #888888;">
             <div style="display: flex; align-items: center;">
-                <a href="" style="">
+                <a href="/" style="">
                     <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
                 </a>
             </div>
@@ -37,6 +37,6 @@
             {{ $slot }}
         </main>
     </div>
-    
+
 </body>
-</html> 
+</html>

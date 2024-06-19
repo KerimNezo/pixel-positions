@@ -11,14 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class RegisteredUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -33,53 +25,26 @@ class RegisteredUserController extends Controller
     {
         $userAttributes = $request->validate([
             'name' => ['required'],
-            'email' => ['required', 'email', 'unique:users, email'], //ovaj unique validate nam provjerava u tabeli users da je email unique
+            'email' => ['required', 'email', 'unique:users,email'], //ovaj unique validate nam provjerava u tabeli users da je email unique
             'password' => ['required', 'confirmed', Password::min(6)],
         ]);
 
         $employerAttributes = $request->validate([
-            'name' => ['required'],
+            'employer' => ['required'],
             'logo' => ['required', File::types(['png', 'jpg', 'webp'])],
         ]);
 
-        $user = User::create($userAttributes);
+        $user = User::create($userAttributes); //create a new user
 
+        $logoPath = $request->logo->store('logos'); //sotre logo to folder and assing it to path variable
+
+        $user->employer()->create([
+            'name' => $employerAttributes['employer'],
+            'logo' => $logoPath
+        ]); // create a new employer
 
         Auth::login($user);
 
-
-
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect('/');
     }
 }
