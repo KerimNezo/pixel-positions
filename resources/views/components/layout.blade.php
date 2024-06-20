@@ -28,9 +28,19 @@
                 <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Companies</a>
             </div>
 
-            <div style="display: flex; align-items: center;">
-                <a href="#" style="margin-left: 0px; color: white; text-decoration: none;">Post a job</a>
-            </div>
+            @auth
+                <div style="display: flex; align-items: center;">
+                    <a href="/jobs/create" style="margin-left: 0px; color: white; text-decoration: none;">Post a job</a>
+                </div>
+            @endauth
+
+            @guest
+                <div style="display: flex; align-items: center; text-color: white; font-weight: bold;">
+                    <a href="/register" style="margin-left: 0px; color: white; text-decoration: none;">Sign Up</a>
+                    <a href="/login" style="margin-left: 15px; color: white; text-decoration: none;">Log In</a>
+                </div>
+            @endguest
+
         </nav>
 
         <main style="margin-top: 25px; max-width:986px; margin: auto;">
