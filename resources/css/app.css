@@ -87,6 +87,8 @@ form.form-komponenta {
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2rem;
+
 }
 
 form.form-komponenta > :not([hidden]) ~ :not([hidden]) {
