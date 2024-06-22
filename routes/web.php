@@ -22,5 +22,11 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
+Route::middleware('auth')->group(function () {
+    Route::delete('/logout', [SessionController::class, 'destroy']);
 
-Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+    Route::get('/jobs/create', [JobController::class, 'create']);
+    Route::post('/jobs', [JobController::class, 'store']);
+});
+
+

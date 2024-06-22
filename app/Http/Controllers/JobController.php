@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreJobRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
+
 
 class JobController extends Controller
 {
@@ -14,11 +18,11 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::all()->groupBy('featured'); // ovdje ih grupisemo po atributu
-        
+        $jobs = Job::latest()->get()->groupBy('featured'); // ovdje ih grupisemo po atributu
+
         return view('jobs.index', [
-            'featured_jobs' => $jobs[1],
-            'jobs' => $jobs[0],
+            'jobs' => $jobs[1],
+            'featured_jobs' => $jobs[0],
             'tags' => Tag::all(),
         ]);
     }
@@ -28,46 +32,42 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobs.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreJobRequest $request)
+    public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'title' => ['required'],
+            'salary' => ['required'],
+            'location' => ['required'],
+            'schedule' => ['required', Rule::in(['Part Time', 'Full Time'])],
+            'url' => ['required', 'url'],
+            'tags' => ['nullable'],
+        ]);
+
+        $attributes['featured'] = $request->has('featured'); //ovo nam provjerava da li tačno imamo bilo kakav check na featured boxu
+
+        $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
+        // ovako storeamo posao u bazu, ali kako tačno ovo radi
+        /*
+        Buduci da svaki jedan user ima jednog samo employera, preko ove auth funckije, uzimamo employera od trenutno loginovag usera
+        (ako nije user loginaovan ovdje pada request), mozemo koristiti tako jobs() funkciju koju employer model ima, koja stvara
+        preko koje mozemo stvoriti novi record u bazi podataka.
+
+        create() je bazna funkcija svih eloquent modela, koja u biti kreira zapis TOG MODELA U BAZI
+        */
+
+        if($attributes['tags'] ?? false) { //front-end i front end i frontend tri razlicita taga, nema smisla
+            foreach (explode(',',$attributes['tags']) as $tag) {
+                $job->tag($tag);
+            }
+        } // u formi primamo tagove kao string, gdje su tagovi odvojeni zarezon (frontend, bekend, baza) i ovdje samo taj string parčamo i uzimamo tekst i pretvaramo ga u tagove
+
+        return redirect('/');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Job $job)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Job $job)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateJobRequest $request, Job $job)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Job $job)
-    {
-        //
-    }
 }

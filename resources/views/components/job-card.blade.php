@@ -4,7 +4,11 @@
     <div style="text-align: start; font-size: 14px;">{{ $job->employer->name }}</div>
 
     <div style="padding-bottom: 20px; padding-top: 20px; font-weight: bold;">
-        <h3> {{ $job->title}} </h3>
+        <h3>
+            <a href="{{ $job->url }}" style="text-decoration: none; color: white;">
+                {{ $job->title}}
+            </a>
+        </h3>
         <p> {{ $job->schedule }} - From {{ $job->salary }} </p>
     </div>
 
