@@ -5,7 +5,7 @@
 
     <div style="padding-bottom: 20px; padding-top: 20px; font-weight: bold;">
         <h3>
-            <a href="{{ $job->url }}" style="text-decoration: none; color: white;">
+            <a href="{{ $job->url }}" style="text-decoration: none; color: white;" target="_blank">
                 {{ $job->title}}
             </a>
         </h3>
@@ -19,6 +19,6 @@
             @endforeach
         </div>
 
-        <x-employer-logo width="42" />
+        <x-employer-logo :employer="$job->employer" :width="42" />
     </div>
 </div>

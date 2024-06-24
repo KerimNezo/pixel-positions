@@ -2,14 +2,14 @@
 
 <div class="job-card" style="padding: 15px; background-color:#221d1d; border-radius: 15px; display: flex; text-align: center; gap: 15px;">
     <div>
-        <x-employer-logo />
+        <x-employer-logo :employer="$job->employer"/>
     </div>
 
     <div style="flex: 1; text-align: left; display: flex; flex-direction: column; ">
         <a style="font-size: 12px; color:darkgray;">{{ $job->employer->name }}</a>
 
         <h3 style="font-size: 20px; margin: 0px; margin-top: 10px;">
-            <a href="{{ $job->url }}" class="job-card-tito">
+            <a href="{{ $job->url }}" class="job-card-tito" target="_blank">
                 {{ $job->title}}
             </a>
         </h3>
