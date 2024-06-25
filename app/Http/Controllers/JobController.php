@@ -43,6 +43,7 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+
         $attributes = $request->validate([
             'title' => ['required'],
             'salary' => ['required'],
@@ -52,7 +53,11 @@ class JobController extends Controller
             'tags' => ['nullable'],
         ]);
 
-        $attributes['featured'] = $request->has('featured'); //ovo nam provjerava da li tačno imamo bilo kakav check na featured boxu
+        if($request->has('Featured')) {
+            $attributes['Featured'] = 0;
+        } else {
+            $attributes['Featured'] = 1;
+        }
 
         $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
         // ovako storeamo posao u bazu, ali kako tačno ovo radi

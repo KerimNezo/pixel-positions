@@ -55,6 +55,8 @@ a.veliki-tag {
     border-radius: 15px;
     font-size: 14px;
     text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
     font-weight: bold;
 }
 
