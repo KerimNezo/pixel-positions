@@ -14,28 +14,30 @@
 <body style="background-color: #060606; margin: 0px; color: white; font-family:'Hanken Grotesk', sans-serif">
 
     <div style="padding-left: 25px; padding-right: 25px;">
-        <nav style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #888888;">
-            <div style="display: flex; align-items: center;">
+        <nav style="display: flex; align-items: center; justify-content:space-between; padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #888888; widht: 100%;">
+            <div style="display: flex; align-items: center; justify-content:start;">
                 <a href="/" style="">
                     <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
                 </a>
             </div>
 
-            <div style="display: flex; align-items: center; text-color: white; font-weight: bold;">
-                <a href="#" style="margin-left: 0px; color: white; text-decoration: none;">Jobs</a>
-                <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Carrers</a>
-                <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Salaries</a>
-                <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Companies</a>
+            <div style="flex: 1; display: flex; justify-content: center; padding-left:48px;">
+                <div style="display: flex; align-items: center; justify-content:center; start: white; font-weight: bold;">
+                    <a href="#" style="margin-left: 0px; color: white; text-decoration: none;">Jobs</a>
+                    <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Carrers</a>
+                    <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Salaries</a>
+                    <a href="#" style="margin-left: 15px; color: white; text-decoration: none;">Companies</a>
+                </div>
             </div>
 
             @auth
-                <div style="display: flex; align-items: center; justify-content: start;">
+                <div style="display: flex; align-items: center; justify-content:right; font-size: 16px;">
                     <a href="/jobs/create" style="margin-left: 0px; color: white; text-decoration: none;">Post a job</a>
 
-                    <form method="POST" action="/logout">
+                    <form method="POST" action="/logout" style="margin: 0; padding: 0;">
                         @csrf
                         @method('DELETE')
-                        <button>Log Out</button>
+                        <button class="dugme-komponenta-nav">Log Out</button>
                     </form>
                 </div>
             @endauth

@@ -69,6 +69,15 @@ button.dugme-komponenta {
     font-weight: 700;
 }
 
+button.dugme-komponenta-nav {
+    background-color: #060606;
+    color: white;
+    border-radius: 0.25rem;
+    border-width: 0rem;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
 div.checkbox-komponenta {
     border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.1);
@@ -78,7 +87,7 @@ div.checkbox-komponenta {
     padding-right: 1.25rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 100%;
+    max-width: 42rem;
 }
 
 div.divider-komponenta {
