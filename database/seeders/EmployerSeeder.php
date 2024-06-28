@@ -17,7 +17,7 @@ class EmployerSeeder extends Seeder
     {
         Employer::factory()->create([
             'name' => 'Merkator',
-            'logo' => fake()->imageUrl,
+            'logo' => 'https://placehold.co/640x640',
             'user_id' => User::factory()->create([
                 'name' => 'VLadan',
                 'email' => 'vladan@test.com',
