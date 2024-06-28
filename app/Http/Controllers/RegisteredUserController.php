@@ -40,10 +40,10 @@ class RegisteredUserController extends Controller
 
         $logoPath = '/storage/' . $logoPath;
 
-        $user->employer()->create([
-            'name' => $employerAttributes['employer'],
-            'logo' => $logoPath
-        ]); // create a new employer
+        $user->employer()
+            ->create(['name' => $employerAttributes['employer']])
+            ->addMedia($request->file('logo'))
+            ->toMediaCollection('logos'); // create a new employer
 
         Auth::login($user);
 
