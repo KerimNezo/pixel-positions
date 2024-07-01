@@ -36,10 +36,6 @@ class RegisteredUserController extends Controller
 
         $user = User::create($userAttributes); //create a new user
 
-        $logoPath = $request->file('logo')->store('logos', 'public');//sotre logo to folder and assing it to path variable
-
-        $logoPath = '/storage/' . $logoPath;
-
         $user->employer()
             ->create(['name' => $employerAttributes['employer']])
             ->addMedia($request->file('logo'))
