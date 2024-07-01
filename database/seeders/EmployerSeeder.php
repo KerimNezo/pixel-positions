@@ -17,7 +17,6 @@ class EmployerSeeder extends Seeder
     {
         Employer::factory()->create([
             'name' => 'Merkator',
-            'logo' => 'logo',
             'user_id' => User::factory()->create([
                 'name' => 'Vladan',
                 'email' => 'vladan@test.com',
