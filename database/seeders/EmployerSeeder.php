@@ -17,12 +17,15 @@ class EmployerSeeder extends Seeder
     {
         Employer::factory()->create([
             'name' => 'Merkator',
-            'logo' => 'https://placehold.co/640x640',
+            'logo' => 'logo',
             'user_id' => User::factory()->create([
-                'name' => 'VLadan',
+                'name' => 'Vladan',
                 'email' => 'vladan@test.com',
                 'password' => Hash::make('12345678'),
             ]),
-        ]);
+        ])
+        ->addMedia('/home/rimke/Desktop/slike/le-code.jpg')
+        ->preservingOriginal()
+        ->toMediaCollection('logos');
     }
 }
