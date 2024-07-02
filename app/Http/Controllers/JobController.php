@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
-use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Validation\Rule;
 
 class JobController extends Controller
 {
@@ -19,9 +17,9 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::query()
-        ->latest()
-        ->with(['employer', 'tags'])
-        ->get()->groupBy('featured'); // ovdje ih grupisemo po atributu
+            ->latest()
+            ->with(['employer', 'tags'])
+            ->get()->groupBy('featured'); // ovdje ih grupisemo po atributu
 
         return view('jobs.index', [
             'jobs' => $jobs[1],
@@ -53,7 +51,7 @@ class JobController extends Controller
             'tags' => ['nullable'],
         ]);
 
-        if($request->has('Featured')) {
+        if ($request->has('Featured')) {
             $attributes['Featured'] = 0;
         } else {
             $attributes['Featured'] = 1;
@@ -69,13 +67,12 @@ class JobController extends Controller
         create() je bazna funkcija svih eloquent modela, koja u biti kreira zapis TOG MODELA U BAZI
         */
 
-        if($attributes['tags'] ?? false) { //front-end i front end i frontend tri razlicita taga, nema smisla
-            foreach (explode(',',$attributes['tags']) as $tag) {
+        if ($attributes['tags'] ?? false) { //front-end i front end i frontend tri razlicita taga, nema smisla
+            foreach (explode(',', $attributes['tags']) as $tag) {
                 $job->tag($tag);
             }
         } // u formi primamo tagove kao string, gdje su tagovi odvojeni zarezon (frontend, bekend, baza) i ovdje samo taj string parčamo i uzimamo tekst i pretvaramo ga u tagove
 
         return redirect('/');
     }
-
 }

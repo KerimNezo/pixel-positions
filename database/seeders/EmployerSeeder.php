@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Employer;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,8 +22,8 @@ class EmployerSeeder extends Seeder
                 'password' => Hash::make('12345678'),
             ]),
         ])
-        ->addMedia('/home/rimke/Desktop/slike/le-code.jpg')
-        ->preservingOriginal()
-        ->toMediaCollection('logos');
+            ->addMedia('/home/rimke/Desktop/slike/le-code.jpg')
+            ->preservingOriginal()
+            ->toMediaCollection('logos');
     }
 }
