@@ -32,6 +32,9 @@
 
             @auth
                 <div style="display: flex; align-items: center; justify-content:right; font-size: 16px;">
+                    @can('delete users')
+                        <span style="margin-right: 10px;">Delete Job</span>
+                    @endcan
                     <a href="/jobs/create" style="margin-left: 0px; color: white; text-decoration: none;">Post a job</a>
 
                     <form method="POST" action="/logout" style="margin: 0; padding: 0;">
